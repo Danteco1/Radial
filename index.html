@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radial - Rádio para Eventos | Estúdio Móvel & Som Indoor</title>
+    <title>RADIAL - Radiocomunicação & Locação de Walkie-Talkies</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Playfair Display + Inter -->
+
+    <!-- Google Fonts: Poppins (Headings) + Montserrat (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Configurações de Tema e Variáveis Tailwind -->
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        radial: {
-                            navy: '#0B132B',       /* Azul Marinho Profundo Conservador */
-                            navyLight: '#1C2541',  /* Azul de Apoio */
-                            gold: '#C5A059',       /* Dourado Elegante */
-                            goldHover: '#B08B45',  /* Hover Dourado */
-                            slate: '#475569',      /* Cinza Ardosia */
-                            ice: '#F8FAFC',        /* Branco Gelo */
-                            cardBg: '#151E38',
+                        brand: {
+                            navyDark: '#0A1322',   /* Fundo Geral */
+                            navy: '#101E35',       /* Cards & Headers */
+                            bluePrimary: '#1D4ED8',/* Azul Profissional */
+                            blueHover: '#1E40AF',
+                            accent: '#0047AB',     /* Destaque Azul/Azul Escuro */
+                            accentHover: '#D97706',
+                            grayLight: '#F8FAFC',
+                            cardBorder: '#1E2E4A',
                             whatsapp: '#25D366'
                         }
                     },
                     fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Inter', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                        montserrat: ['Montserrat', 'sans-serif'],
                     }
                 }
             }
@@ -44,1051 +44,927 @@
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0B132B;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #2a2f38;
             color: #F8FAFC;
+            overflow-x: hidden;
         }
 
-        .font-serif-heading {
-            font-family: 'Playfair Display', serif;
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Moldura para Anúncios AdSense */
-        .adsense-placeholder {
-            border: 1px dashed rgba(197, 160, 89, 0.4);
-            background: rgba(15, 23, 42, 0.6);
+        .adsense-slot {
+            border: 1px dashed rgba(35, 52, 66, 0.35);
+            background: rgba(16, 30, 53, 0.7);
         }
 
-        /* Chatbot Pulse Effect */
-        @keyframes pulse-ring {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        /* Custom Scrollbar */
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
         }
-
-        .chat-pulse {
-            animation: pulse-ring 2s infinite;
+        .custom-scroll::-webkit-scrollbar-track {
+            background: rgba(10, 19, 34, 0.8);
         }
-
-        /* Custom Scrollbar for Chat */
-        .chat-scroll::-webkit-scrollbar {
-            width: 5px;
-        }
-        .chat-scroll::-webkit-scrollbar-track {
-            background: rgba(11, 19, 43, 0.5);
-        }
-        .chat-scroll::-webkit-scrollbar-thumb {
-            background: #C5A059;
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #1D4ED8;
             border-radius: 4px;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-radial-gold selection:text-radial-navy relative">
+<body class="antialiased selection:bg-brand-accent selection:text-white relative min-h-screen flex flex-col justify-between">
 
-    <!-- HEADER & NAVBAR MODULAR -->
-    <header class="sticky top-0 z-40 bg-radial-navy/95 backdrop-blur-md border-b border-radial-gold/20 transition-all duration-300" id="main-header">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            
-            <!-- Logo -->
-            <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-radial-gold to-yellow-200 flex items-center justify-center text-radial-navy font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-tower-cell"></i>
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-serif-heading text-2xl font-bold tracking-wider text-white">RADIAL</span>
-                    <span class="text-[10px] tracking-widest text-radial-gold uppercase font-medium">Rádio Personalizada para Eventos</span>
-                </div>
+<!-- HEADER MINIMALISTA EM FUNDO BRANCO -->
+<header class="sticky top-0 z-40 bg-white border-b border-gray-100 shadow-sm" id="main-header">
+
+    <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 h-20 sm:h-24 flex items-center justify-between">
+
+        <!-- BRANDING (LOGO AMPLIADA) -->
+        <a href="#home" class="flex items-center space-x-3 group">
+            <div id="company-logo-container" class="h-10 sm:h-12 md:h-16 flex items-center justify-center overflow-hidden shrink-0">
+                <img src="https://i.imgur.com/s0KZBLx.png" alt="Logo RADIAL" class="h-full w-auto object-contain">
+            </div>
+        </a>
+
+        <!-- MENU DESKTOP -->
+        <nav class="hidden md:flex items-center space-x-6 lg:space-x-10 text-xs lg:text-sm font-bold tracking-wider uppercase">
+
+            <a href="#home" class="text-blue-600 flex flex-col items-center relative py-2 sm:py-3">
+                <span>Início</span>
+                <span class="absolute bottom-0 w-7 h-[3px] bg-blue-600 rounded-full"></span>
             </a>
 
-            <!-- Menu Desktop (Estrutura Aberta para Futuras Abas) -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="#home" class="text-radial-gold hover:text-white transition-colors">Início</a>
-                <a href="#como-funciona" class="text-gray-300 hover:text-radial-gold transition-colors">Como Funciona</a>
-                <a href="#exposicao" class="text-gray-300 hover:text-radial-gold transition-colors">Projetos & Equipamentos</a>
-                <a href="#orcamento" class="text-gray-300 hover:text-radial-gold transition-colors">Simulador WhatsApp</a>
-                <a href="#depoimentos" class="text-gray-300 hover:text-radial-gold transition-colors">Depoimentos</a>
-                <a href="#contato" class="text-gray-300 hover:text-radial-gold transition-colors">Contato</a>
-            </nav>
+            <a href="#solucoes" class="text-gray-800 hover:text-blue-600 transition-colors flex items-center space-x-1.5 py-2 sm:py-3">
+                <span>Aplicações</span>
+            </a>
 
-            <!-- CTA Header -->
-            <div class="hidden lg:flex items-center space-x-4">
-                <button onclick="toggleChatbot()" class="px-5 py-2.5 rounded-md bg-radial-gold hover:bg-radial-goldHover text-radial-navy font-semibold text-sm transition-all shadow-md hover:shadow-radial-gold/20 flex items-center space-x-2">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Cotar via WhatsApp</span>
-                </button>
-            </div>
+            <a href="#solucoes-comunicacao" class="text-gray-800 hover:text-blue-600 transition-colors flex items-center space-x-1.5 py-2 sm:py-3">
+                <span>Soluções</span>
+            </a>
 
-            <!-- Botão Mobile Menu -->
-            <button id="mobile-menu-btn" type="button" class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2" aria-label="Abrir Menu">
-                <i class="fa-solid fa-bars text-2xl"></i>
+            <a href="#como-funciona" class="text-gray-800 hover:text-blue-600 transition-colors flex items-center py-2 sm:py-3">
+                <span>Como Funciona</span>
+            </a>
+
+            <a href="#cotacao" class="text-gray-800 hover:text-blue-600 transition-colors flex items-center py-2 sm:py-3">
+                <span>Cotação</span>
+            </a>
+
+            <a href="#contato" class="text-gray-800 hover:text-blue-600 transition-colors flex items-center py-2 sm:py-3">
+                <span>Contato</span>
+            </a>
+
+        </nav>
+
+        <!-- CTA HEADER DESKTOP -->
+        <div class="hidden lg:flex items-center space-x-4">
+            <a href="#cotacao" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center space-x-2.5">
+                <i data-lucide="message-square-quote" class="w-4 h-4"></i>
+                <span>Cotação Rápida</span>
+            </a>
+        </div>
+
+        <!-- BOTÃO HAMBÚRGUER MOBILE -->
+        <button id="mobile-menu-btn" type="button" class="md:hidden text-gray-800 hover:text-blue-600 focus:outline-none p-2 rounded-lg" aria-label="Abrir Menu">
+            <i data-lucide="menu" class="w-8 h-8"></i>
+        </button>
+
+    </div>
+
+</header>
+
+<!-- MENU MOBILE OVERLAY & DRAWER -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60 z-50 hidden md:hidden transition-opacity duration-300 opacity-0" onclick="toggleMobileMenu()"></div>
+
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-[280px] sm:w-[320px] bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-between shadow-2xl">
+    
+    <!-- Topo do Menu Mobile -->
+    <div>
+        <div class="p-5 flex items-center justify-between border-b border-gray-100">
+            <img src="https://i.imgur.com/s0KZBLx.png" alt="Logo RADIAL" class="h-8 w-auto">
+            <button onclick="toggleMobileMenu()" class="p-2 text-gray-600 hover:text-blue-600 focus:outline-none">
+                <i data-lucide="x" class="w-6 h-6"></i>
             </button>
         </div>
 
-        <!-- Menu Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-radial-navyLight border-b border-radial-gold/20 px-4 pt-2 pb-6 space-y-3">
-            <a href="#home" class="block py-2 text-radial-gold font-medium border-b border-gray-700/50">Início</a>
-            <a href="#como-funciona" class="block py-2 text-gray-300 hover:text-radial-gold border-b border-gray-700/50">Como Funciona</a>
-            <a href="#exposicao" class="block py-2 text-gray-300 hover:text-radial-gold border-b border-gray-700/50">Projetos & Equipamentos</a>
-            <a href="#orcamento" class="block py-2 text-gray-300 hover:text-radial-gold border-b border-gray-700/50">Simulador WhatsApp</a>
-            <a href="#depoimentos" class="block py-2 text-gray-300 hover:text-radial-gold border-b border-gray-700/50">Depoimentos</a>
-            <a href="#contato" class="block py-2 text-gray-300 hover:text-radial-gold border-b border-gray-700/50">Contato</a>
-            <button onclick="toggleChatbot(); toggleMobileMenu();" class="w-full mt-4 px-4 py-2.5 rounded bg-radial-gold text-radial-navy font-semibold flex items-center justify-center space-x-2">
-                <i class="fa-brands fa-whatsapp text-lg"></i>
-                <span>Falar no WhatsApp Chatbot</span>
-            </button>
-        </div>
-    </header>
+        <!-- Links Mobile -->
+        <nav class="flex flex-col p-6 space-y-5 text-sm font-bold tracking-wider uppercase text-gray-800">
+            <a href="#home" onclick="toggleMobileMenu()" class="text-blue-600 border-l-4 border-blue-600 pl-3">Início</a>
+            <a href="#solucoes" onclick="toggleMobileMenu()" class="hover:text-blue-600 transition pl-3">Aplicações</a>
+            <a href="#solucoes-comunicacao" onclick="toggleMobileMenu()" class="hover:text-blue-600 transition pl-3">Soluções</a>
+            <a href="#como-funciona" onclick="toggleMobileMenu()" class="hover:text-blue-600 transition pl-3">Como Funciona</a>
+            <a href="#cotacao" onclick="toggleMobileMenu()" class="hover:text-blue-600 transition pl-3">Cotação</a>
+            <a href="#contato" onclick="toggleMobileMenu()" class="hover:text-blue-600 transition pl-3">Contato</a>
+        </nav>
+    </div>
+
+    <!-- CTA do Menu Mobile -->
+    <div class="p-6 border-t border-gray-100 space-y-3">
+        <a href="#cotacao" onclick="toggleMobileMenu()" class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center space-x-2 shadow-md">
+            <i data-lucide="message-square-quote" class="w-4 h-4"></i>
+            <span>Cotação Rápida</span>
+        </a>
+        <p class="text-[10px] text-center text-gray-400">RADIAL Radiocomunicação &copy; 2026</p>
+    </div>
+</div>
+
+<main class="flex-grow">
 
     <!-- ADSENSE BANNER TOP -->
     <div class="max-w-7xl mx-auto px-4 py-3">
-        <div class="adsense-placeholder rounded-lg p-2 text-center text-xs text-gray-400 flex flex-col items-center justify-center min-h-[90px]">
-            <span class="uppercase tracking-widest text-[10px] text-radial-gold/70 mb-1">PUBLICIDADE / ADSENSE TOP BANNER</span>
-            <div class="w-full max-w-[728px] h-[60px] bg-white/5 border border-white/10 rounded flex items-center justify-center text-gray-500 font-mono text-xs">
+        <div class="adsense-slot rounded-lg p-2 text-center text-xs text-gray-400 flex flex-col items-center justify-center min-h-[90px]">
+            <span class="uppercase tracking-widest text-[10px] text-brand-accent font-semibold mb-1">PUBLICIDADE / ADSENSE BANNER TOP</span>
+            <div class="w-full max-w-[728px] h-[60px] bg-white/5 border border-white/10 rounded flex items-center justify-center text-gray-400 font-mono text-[10px] sm:text-xs">
                 Anúncio Responsivo (Leaderboard 728x90)
             </div>
         </div>
     </div>
 
-    <main>
-        <!-- HERO SECTION -->
-        <section id="home" class="relative py-12 lg:py-20 overflow-hidden">
-            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-radial-gold/10 rounded-full blur-3xl -z-10 pointer-events-none"></div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-radial-gold/10 border border-radial-gold/30 text-radial-gold text-xs font-semibold uppercase tracking-wider">
-                            <i class="fa-solid fa-microphone-lines text-xs"></i>
-                            <span>Rádio Exclusiva Contratada sob Demanda</span>
-                        </div>
-                        
-                        <h1 class="font-serif-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                            Sua Própria Estação de Rádio Durante Seu Evento
-                        </h1>
-
-                        <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-                            A **Radial** leva um estúdio móvel de transmissão completa para o local do seu evento. Locução ao vivo profissional, avisos personalizados, avisos corporativos e curadoria sonora exclusiva para feiras, congressos, formaturas e casamentos.
-                        </p>
-
-                        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                            <button onclick="toggleChatbot()" class="w-full sm:w-auto px-8 py-4 rounded bg-radial-whatsapp hover:bg-emerald-600 text-white font-bold text-base transition-all shadow-lg flex items-center justify-center gap-3">
-                                <i class="fa-brands fa-whatsapp text-xl"></i>
-                                <span>Atendimento via Chatbot</span>
-                            </button>
-                            <a href="#como-funciona" class="w-full sm:w-auto px-8 py-4 rounded border border-radial-gold/40 hover:bg-radial-gold/10 text-white font-medium text-base transition-all flex items-center justify-center gap-2">
-                                <i class="fa-solid fa-circle-info"></i>
-                                <span>Entenda como funciona</span>
-                            </a>
-                        </div>
-
-                        <!-- Indicadores Fatos -->
-                        <div class="pt-8 border-t border-gray-800 grid grid-cols-3 gap-4 text-center lg:text-left">
-                            <div>
-                                <p class="text-2xl font-serif-heading font-bold text-radial-gold">100%</p>
-                                <p class="text-xs text-gray-400">Personalizado p/ seu Evento</p>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-serif-heading font-bold text-radial-gold">+450</p>
-                                <p class="text-xs text-gray-400">Eventos Atendidos</p>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-serif-heading font-bold text-radial-gold">FM & IP</p>
-                                <p class="text-xs text-gray-400">Transmissão Indoor Local</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card Ilustrativo de Atendimento de Rádio para Eventos -->
-                    <div class="lg:col-span-5">
-                        <div class="bg-radial-cardBg border border-radial-gold/30 rounded-2xl p-6 shadow-2xl relative">
-                            <div class="relative rounded-xl overflow-hidden mb-6 h-64 border border-gray-800">
-                                <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80" alt="Estúdio de Rádio Temporário Radial" class="w-full h-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-radial-navy via-radial-navy/30 to-transparent"></div>
-                                <div class="absolute bottom-4 left-4 right-4 bg-radial-navy/90 p-3 rounded-lg border border-radial-gold/30">
-                                    <span class="text-xs font-bold text-radial-gold block uppercase"><i class="fa-solid fa-building-user mr-1"></i> Estúdio Móvel no Local</span>
-                                    <p class="text-xs text-gray-300">Monotagens rápidas em até 2 horas antes da abertura do evento.</p>
-                                </div>
-                            </div>
-
-                            <div class="space-y-3">
-                                <h3 class="font-serif-heading text-lg font-bold text-white">Por que contratar a Radial?</h3>
-                                <ul class="text-xs space-y-2 text-gray-300">
-                                    <li class="flex items-center space-x-2">
-                                        <i class="fa-solid fa-circle-check text-radial-gold"></i>
-                                        <span>Sem necessidade de sintonia externa - Rádio restrita ao evento.</span>
-                                    </li>
-                                    <li class="flex items-center space-x-2">
-                                        <i class="fa-solid fa-circle-check text-radial-gold"></i>
-                                        <span>Anúncios de patrocinadores e avisos durante a programação.</span>
-                                    </li>
-                                    <li class="flex items-center space-x-2">
-                                        <i class="fa-solid fa-circle-check text-radial-gold"></i>
-                                        <span>Locutores profissionais vestidos adequadamente ao perfil.</span>
-                                    </li>
-                                </ul>
-
-                                <div class="pt-2">
-                                    <button onclick="toggleChatbot()" class="w-full py-3 bg-radial-gold hover:bg-radial-goldHover text-radial-navy font-bold text-xs rounded transition flex items-center justify-center space-x-2">
-                                        <i class="fa-solid fa-comments"></i>
-                                        <span>Iniciar Cotação com Assistente Virtual</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- COMO FUNCIONA A RÁDIO PARA EVENTOS -->
-        <section id="como-funciona" class="py-16 bg-radial-navyLight/50 border-y border-radial-gold/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- HERO SECTION PROFISSIONAL E LIMPA -->
+    <section id="home" class="py-8 sm:py-12 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                 
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-radial-gold text-xs font-semibold uppercase tracking-widest">Serviço Sob Demanda</span>
-                    <h2 class="font-serif-heading text-3xl sm:text-4xl font-bold text-white mt-2">Como funciona a Radial no seu evento?</h2>
-                    <p class="text-gray-300 text-sm sm:text-base mt-4 font-light">
-                        Não somos uma rádio comercial de difusão aberta contínua. Somos uma **solução técnica de áudio e engajamento contratada por evento**.
+                <div class="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
+                    <h1 class="font-poppins text-2xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-white leading-tight">
+                        Quando a equipe precisa se comunicar <span class="text-blue-500">a Radial conecta.</span>
+                    </h1>
+
+                    <p class="text-gray-300 text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
+                        Na Radial Comunicação, acreditamos que um bom trabalho começa com uma equipe bem conectada. Nosso compromisso é oferecer confiança, qualidade e eficiência, com equipamentos preparados para cada necessidade. Cuidamos da comunicação para que sua equipe possa focar no que realmente importa.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
+                        <a href="#cotacao" class="w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-lg bg-brand-navyDark hover:bg-brand-blueHover text-white font-semibold text-xs sm:text-sm transition-all shadow-md flex items-center justify-center space-x-2">
+                            <i data-lucide="file-text" class="w-4 h-4"></i>
+                            <span>Cote! Sem compromisso</span>
+                        </a>
+                        <a href="https://wa.me/5512996320378" target="_blank" class="w-full sm:w-auto px-6 py-3.5 sm:px-8 sm:py-4 rounded-lg bg-brand-navy border border-brand-cardBorder hover:border-brand-bluePrimary text-white font-medium text-xs sm:text-sm transition-all flex items-center justify-center space-x-2">
+                            <i data-lucide="message-circle" class="w-4 h-4 text-brand-whatsapp"></i>
+                            <span>Fale conosco pelo WhatsApp!</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CARD DIREITA DE EQUIPAMENTO -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-lg overflow-hidden mb-5 h-52 sm:h-64 border border-brand-cardBorder bg-brand-navyDark">
+                        <img src="https://i.imgur.com/38OONBv.jpeg" alt="Frota de Rádios RADIAL" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO APLICAÇÕES & SOLUÇÕES -->
+    <section id="solucoes" class="py-12 sm:py-16 bg-brand-navy/50 border-y border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+                <span class="text-gray-300 text-xs font-bold uppercase tracking-widest">Aplicações Práticas</span>
+                <h2 class="font-poppins text-xl sm:text-3xl font-extrabold text-white uppercase mt-1">Soluções por Segmento</h2>
+                <p class="text-gray-400 text-xs sm:text-sm mt-2">
+                    De eventos de pequeno a grande porte, garantimos a tecnologia ideal para atender às necessidades da sua operação.              
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                
+                <div class="bg-brand-navy p-5 sm:p-6 rounded-xl border border-brand-cardBorder hover:border-brand-bluePrimary transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-brand-navyDark text-brand-bluePrimary flex items-center justify-center mb-4 border border-brand-cardBorder">
+                        <i data-lucide="ticket" class="w-5 h-5 text-blue-400"></i>
+                    </div>
+                    <h3 class="font-poppins text-base font-bold text-white uppercase mb-2">Feiras & Eventos</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Coordenação em tempo real para produção, recepção, montagem, credenciamento e equipe de limpeza.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    
-                    <!-- Passo 1 -->
-                    <div class="bg-radial-navy p-6 rounded-xl border border-gray-800 relative">
-                        <span class="w-8 h-8 rounded-full bg-radial-gold text-radial-navy font-bold flex items-center justify-center text-sm mb-4">1</span>
-                        <h3 class="font-serif-heading text-lg font-bold text-white mb-2">Briefing & Trilha</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">
-                            Definimos a playlist, programação de comunicados e os horários das locuções ao vivo de acordo com o cronograma.
-                        </p>
+                <div class="bg-brand-navy p-5 sm:p-6 rounded-xl border border-brand-cardBorder hover:border-brand-bluePrimary transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-brand-navyDark flex items-center justify-center mb-4 border border-brand-cardBorder">
+                        <i data-lucide="shield" class="w-5 h-5 text-red-400"></i>
                     </div>
-
-                    <!-- Passo 2 -->
-                    <div class="bg-radial-navy p-6 rounded-xl border border-gray-800 relative">
-                        <span class="w-8 h-8 rounded-full bg-radial-gold text-radial-navy font-bold flex items-center justify-center text-sm mb-4">2</span>
-                        <h3 class="font-serif-heading text-lg font-bold text-white mb-2">Estúdio Móvel</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">
-                            Nossa equipe monta a mesa de transmissão, microfones de alta performance e transmissores no espaço do evento.
-                        </p>
-                    </div>
-
-                    <!-- Passo 3 -->
-                    <div class="bg-radial-navy p-6 rounded-xl border border-gray-800 relative">
-                        <span class="w-8 h-8 rounded-full bg-radial-gold text-radial-navy font-bold flex items-center justify-center text-sm mb-4">3</span>
-                        <h3 class="font-serif-heading text-lg font-bold text-white mb-2">Transmissão Indoor</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">
-                            O som é propagado nas caixas do local ou via frequência restrita (FM indoor/IP para celulares dos participantes).
-                        </p>
-                    </div>
-
-                    <!-- Passo 4 -->
-                    <div class="bg-radial-navy p-6 rounded-xl border border-gray-800 relative">
-                        <span class="w-8 h-8 rounded-full bg-radial-gold text-radial-navy font-bold flex items-center justify-center text-sm mb-4">4</span>
-                        <h3 class="font-serif-heading text-lg font-bold text-white mb-2">Engajamento</h3>
-                        <p class="text-gray-400 text-xs leading-relaxed">
-                            Realizamos chamadas de patrocinadores, entrevistas rápidas com convidados e avisos organizacionais.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPOSIÇÃO: GALERIA E EQUIPAMENTOS COM FILTROS -->
-        <section id="exposicao" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                    <div>
-                        <span class="text-radial-gold text-xs font-semibold uppercase tracking-widest">Nossa Estrutura & Portfólio</span>
-                        <h2 class="font-serif-heading text-3xl sm:text-4xl font-bold text-white mt-2">Projetos Executados & Equipamentos</h2>
-                    </div>
-                    
-                    <!-- Botões de Filtro -->
-                    <div class="mt-6 md:mt-0 inline-flex p-1 bg-radial-navyLight rounded-lg border border-radial-gold/20 flex-wrap gap-1">
-                        <button id="filter-all" onclick="filterGallery('all')" class="gallery-tab active px-4 py-2 rounded-md text-xs font-medium transition-all bg-radial-gold text-radial-navy">Todos</button>
-                        <button id="filter-projetos" onclick="filterGallery('projetos')" class="gallery-tab px-4 py-2 rounded-md text-xs font-medium text-gray-300 hover:text-white transition-all">Projetos Executados</button>
-                        <button id="filter-mesas" onclick="filterGallery('mesas')" class="gallery-tab px-4 py-2 rounded-md text-xs font-medium text-gray-300 hover:text-white transition-all">Estruturas & Mesas</button>
-                        <button id="filter-microfones" onclick="filterGallery('microfones')" class="gallery-tab px-4 py-2 rounded-md text-xs font-medium text-gray-300 hover:text-white transition-all">Microfonia & Transmissores</button>
-                    </div>
+                    <h3 class="font-poppins text-base font-bold text-white uppercase mb-2">Segurança & Brigada</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Canais sigilosos, fones de lapela anatômicos e acionamento ágil para rondas e controle de acesso.
+                    </p>
                 </div>
 
-                <!-- Grid Galeria -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-container">
-                    
-                    <!-- Item 1: Projetos -->
-                    <div class="gallery-item projetos bg-radial-cardBg rounded-xl overflow-hidden border border-gray-800 hover:border-radial-gold/40 transition-all duration-300 flex flex-col">
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Congresso Corporativo" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                            <span class="absolute top-3 left-3 bg-radial-navy/90 text-radial-gold border border-radial-gold/30 text-[10px] uppercase font-bold px-2.5 py-1 rounded">Projeto Executado</span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h3 class="font-serif-heading text-lg font-bold text-white mb-2">Congresso de Medicina & Saúde</h3>
-                                <p class="text-gray-400 text-xs leading-relaxed mb-4">Rádio Indoor cobrindo 3 pavilhões simultâneos com avisos sobre palestras e vinhetas dos patrocinadores.</p>
-                            </div>
-                            <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gray-400">
-                                <span><i class="fa-solid fa-location-dot mr-1 text-radial-gold"></i> São Paulo - SP</span>
-                                <span class="text-radial-gold font-semibold">2 Dias de Duração</span>
-                            </div>
-                        </div>
+                <div class="bg-brand-navy p-5 sm:p-6 rounded-xl border border-brand-cardBorder hover:border-brand-bluePrimary transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-brand-navyDark flex items-center justify-center mb-4 border border-brand-cardBorder">
+                        <i data-lucide="warehouse" class="w-5 h-5 text-white"></i>
                     </div>
-
-                    <!-- Item 2: Mesas -->
-                    <div class="gallery-item mesas bg-radial-cardBg rounded-xl overflow-hidden border border-gray-800 hover:border-radial-gold/40 transition-all duration-300 flex flex-col">
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=80" alt="Mesa Broadcast Digital" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                            <span class="absolute top-3 left-3 bg-radial-navy/90 text-radial-gold border border-radial-gold/30 text-[10px] uppercase font-bold px-2.5 py-1 rounded">Estruturas & Mesas</span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h3 class="font-serif-heading text-lg font-bold text-white mb-2">Console Digital Rádio Móvel</h3>
-                                <p class="text-gray-400 text-xs leading-relaxed mb-4">Mesa compacta com insertes telefônicos, conectividade Bluetooth e saídas digitais em HD sem ruídos.</p>
-                            </div>
-                            <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gray-400">
-                                <span><i class="fa-solid fa-microchip mr-1 text-radial-gold"></i> DSP Interno</span>
-                                <span class="text-radial-gold font-semibold">Tecnologia Digital</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 3: Microfones -->
-                    <div class="gallery-item microfones bg-radial-cardBg rounded-xl overflow-hidden border border-gray-800 hover:border-radial-gold/40 transition-all duration-300 flex flex-col">
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?auto=format&fit=crop&w=800&q=80" alt="Microfones de Locução" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                            <span class="absolute top-3 left-3 bg-radial-navy/90 text-radial-gold border border-radial-gold/30 text-[10px] uppercase font-bold px-2.5 py-1 rounded">Microfonia & Transmissores</span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h3 class="font-serif-heading text-lg font-bold text-white mb-2">Microfones Shure & Neumann</h3>
-                                <p class="text-gray-400 text-xs leading-relaxed mb-4">Set de microfonia de altíssimo padrão com isolamento acoplado para evitar captação do barulho de feiras.</p>
-                            </div>
-                            <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gray-400">
-                                <span><i class="fa-solid fa-headset mr-1 text-radial-gold"></i> Padrão Estúdio</span>
-                                <span class="text-radial-gold font-semibold">Voz Aveludada</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 4: Projetos -->
-                    <div class="gallery-item projetos bg-radial-cardBg rounded-xl overflow-hidden border border-gray-800 hover:border-radial-gold/40 transition-all duration-300 flex flex-col">
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Feira de Agronegócio" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                            <span class="absolute top-3 left-3 bg-radial-navy/90 text-radial-gold border border-radial-gold/30 text-[10px] uppercase font-bold px-2.5 py-1 rounded">Projeto Executado</span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h3 class="font-serif-heading text-lg font-bold text-white mb-2">Feira de Leilão e Agro</h3>
-                                <p class="text-gray-400 text-xs leading-relaxed mb-4">Transmissão em FM restrita para o parque de exposição com narração de leilões e chamadas dos estandes.</p>
-                            </div>
-                            <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gray-400">
-                                <span><i class="fa-solid fa-location-dot mr-1 text-radial-gold"></i> Ribeirão Preto - SP</span>
-                                <span class="text-radial-gold font-semibold">FM Baixa Potência</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 5: Microfones -->
-                    <div class="gallery-item microfones bg-radial-cardBg rounded-xl overflow-hidden border border-gray-800 hover:border-radial-gold/40 transition-all duration-300 flex flex-col">
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80" alt="Transmissor FM Indoor" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                            <span class="absolute top-3 left-3 bg-radial-navy/90 text-radial-gold border border-radial-gold/30 text-[10px] uppercase font-bold px-2.5 py-1 rounded">Microfonia & Transmissores</span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h3 class="font-serif-heading text-lg font-bold text-white mb-2">Transmissores de FM Indoor Homologados</h3>
-                                <p class="text-gray-400 text-xs leading-relaxed mb-4">Equipamentos compactos ajustados exclusivamente para o raio de cobertura do pavilhão sem interferências.</p>
-                            </div>
-                            <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gray-400">
-                                <span><i class="fa-solid fa-wifi mr-1 text-radial-gold"></i> Alcance Seguro</span>
-                                <span class="text-radial-gold font-semibold">100m a 1km</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Item 6: Mesas -->
-                    <div class="gallery-item mesas bg-radial-cardBg rounded-xl overflow-hidden border border-gray-800 hover:border-radial-gold/40 transition-all duration-300 flex flex-col">
-                        <div class="relative h-56 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Gala e Casamento" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
-                            <span class="absolute top-3 left-3 bg-radial-navy/90 text-radial-gold border border-radial-gold/30 text-[10px] uppercase font-bold px-2.5 py-1 rounded">Estruturas & Mesas</span>
-                        </div>
-                        <div class="p-6 flex-1 flex flex-col justify-between">
-                            <div>
-                                <h3 class="font-serif-heading text-lg font-bold text-white mb-2">Estúdio Vintage Conservador</h3>
-                                <p class="text-gray-400 text-xs leading-relaxed mb-4">Bancada com acabamento em madeira e detalhes dourados para casamentos luxuosos e bailes corporativos.</p>
-                            </div>
-                            <div class="pt-4 border-t border-gray-800 flex justify-between items-center text-xs text-gray-400">
-                                <span><i class="fa-solid fa-gem mr-1 text-radial-gold"></i> Design Nobre</span>
-                                <span class="text-radial-gold font-semibold">Estilo Clássico</span>
-                            </div>
-                        </div>
-                    </div>
-
+                    <h3 class="font-poppins text-base font-bold text-white uppercase mb-2">Logística & Armazéns</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Comunicação direta sem depender de sinal de celular em pátios de carga e centro de distribuição.
+                    </p>
                 </div>
-            </div>
-        </section>
 
-        <!-- ADSENSE BANNER MID-PAGE -->
-        <div class="max-w-7xl mx-auto px-4 py-6">
-            <div class="adsense-placeholder rounded-lg p-3 text-center text-xs text-gray-400 flex flex-col items-center justify-center min-h-[120px]">
-                <span class="uppercase tracking-widest text-[10px] text-radial-gold/70 mb-1">PUBLICIDADE / ADSENSE IN-ARTICLE</span>
-                <div class="w-full max-w-[970px] h-[90px] bg-white/5 border border-white/10 rounded flex items-center justify-center text-gray-500 font-mono text-xs">
-                    Espaço Anúncio Responsivo (970x90 ou Adaptável)
+                <div class="bg-brand-navy p-5 sm:p-6 rounded-xl border border-brand-cardBorder hover:border-brand-bluePrimary transition-colors">
+                    <div class="w-10 h-10 rounded-lg bg-brand-navyDark flex items-center justify-center mb-4 border border-brand-cardBorder">
+                        <i data-lucide="hard-hat" class="w-5 h-5 text-emerald-400"></i>
+                    </div>
+                    <h3 class="font-poppins text-base font-bold text-white uppercase mb-2">Indústria & Obras</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Rádios robustos com cancelamento ativo de ruído para ambientes com máquinas pesadas e poeira.
+                    </p>
                 </div>
+
             </div>
         </div>
+    </section>
 
-        <!-- SIMULADOR DE ORÇAMENTO INTEGRADO COM WHATSAPP -->
-        <section id="orcamento" class="py-20 bg-radial-navyLight/30 relative border-t border-radial-gold/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- SEÇÃO SOLUÇÕES DE COMUNICAÇÃO -->
+    <section id="solucoes-comunicacao" class="py-12 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Cabeçalho e Filtros -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4">
+                <div>
+                    <span class="text-gray-300 text-xs font-bold uppercase tracking-widest">Aplicações & Segmentos</span>
+                    <h2 class="font-poppins text-xl sm:text-3xl font-extrabold text-white uppercase mt-1">Soluções de Comunicação</h2>
+                </div>
                 
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <div class="lg:col-span-5 space-y-6">
-                        <span class="text-radial-gold text-xs font-semibold uppercase tracking-widest">Calculadora Rápida</span>
-                        <h2 class="font-serif-heading text-3xl sm:text-4xl font-bold text-white">Simule o Valor e Envie Direto no WhatsApp</h2>
-                        <p class="text-gray-300 text-sm leading-relaxed font-light">
-                            Monte os parâmetros do seu evento para gerar um resumo imediato do projeto. Ao clicar em enviar, os dados serão formatados diretamente no WhatsApp da Radial.
-                        </p>
+                <!-- Botões de Filtro Responsivos -->
+                <div class="flex flex-wrap gap-1.5 sm:gap-2 p-1.5 bg-brand-navy rounded-lg border border-brand-cardBorder w-full sm:w-auto">
+                    <button id="filter-all" onclick="filterGallery('all')" class="gallery-tab active flex-1 sm:flex-none px-3 py-2 rounded-md text-[11px] sm:text-xs font-bold uppercase transition bg-brand-bluePrimary text-white">Todos</button>
+                    <button id="filter-eventos" onclick="filterGallery('eventos')" class="gallery-tab flex-1 sm:flex-none px-3 py-2 rounded-md text-[11px] sm:text-xs font-bold uppercase text-gray-300 hover:text-white transition">Eventos & Shows</button>
+                    <button id="filter-seguranca" onclick="filterGallery('seguranca')" class="gallery-tab flex-1 sm:flex-none px-3 py-2 rounded-md text-[11px] sm:text-xs font-bold uppercase text-gray-300 hover:text-white transition">Segurança</button>
+                    <button id="filter-operacoes" onclick="filterGallery('operacoes')" class="gallery-tab flex-1 sm:flex-none px-3 py-2 rounded-md text-[11px] sm:text-xs font-bold uppercase text-gray-300 hover:text-white transition">Operações</button>
+                </div>
+            </div>
 
-                        <div class="space-y-4 pt-2">
-                            <div class="flex items-start space-x-3">
-                                <div class="w-6 h-6 rounded-full bg-radial-gold/20 text-radial-gold flex items-center justify-center text-xs mt-1">
-                                    <i class="fa-solid fa-bolt"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-semibold text-white">Retorno Imediato</h4>
-                                    <p class="text-xs text-gray-400">Receba a proposta formalizada no WhatsApp em poucos minutos.</p>
-                                </div>
-                            </div>
+            <!-- Grid de Soluções -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="gallery-container">
+                
+                <!-- Item 1: Eventos Corporativos -->
+                <div class="gallery-item eventos bg-brand-navy rounded-xl overflow-hidden border border-brand-cardBorder hover:border-brand-bluePrimary transition-all flex flex-col">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-brand-navyDark">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Eventos Corporativos" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-gray-800/90 text-white border border-gray-600/50 text-[10px] font-bold uppercase px-2.5 py-1 rounded shadow-sm">Corporativo</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-poppins text-base font-bold text-white uppercase">Eventos Corporativos</h3>
+                            <p class="text-gray-400 text-xs leading-relaxed mt-2">Comunicação discreta e alinhada para a coordenação em reuniões, congressos e feiras corporativas.</p>
+                        </div>
+                        <div class="pt-3 border-t border-brand-cardBorder flex justify-between items-center text-xs text-white">
+                            <span class="flex items-center text-white"><i data-lucide="headphones" class="w-4 h-4 text-white mr-1.5"></i> Fones Discretos</span>
+                            <span class="text-white font-semibold">Canais Privativos</span>
+                        </div>
+                    </div>
+                </div>
 
-                            <div class="flex items-start space-x-3">
-                                <div class="w-6 h-6 rounded-full bg-radial-gold/20 text-radial-gold flex items-center justify-center text-xs mt-1">
-                                    <i class="fa-solid fa-shield-halved"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-sm font-semibold text-white">Sem Compromisso</h4>
-                                    <p class="text-xs text-gray-400">A simulação ajuda a adaptar a estrutura ao seu orçamento.</p>
-                                </div>
-                            </div>
+                <!-- Item 2: Eventos de Grande Porte -->
+                <div class="gallery-item eventos bg-brand-navy rounded-xl overflow-hidden border border-brand-cardBorder hover:border-brand-bluePrimary transition-all flex flex-col">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-brand-navyDark">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80" alt="Eventos de Grande Porte" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-gray-800/90 text-white border border-gray-600/50 text-[10px] font-bold uppercase px-2.5 py-1 rounded shadow-sm">Grande Porte</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-poppins text-base font-bold text-white uppercase">Eventos de Grande Porte</h3>
+                            <p class="text-gray-400 text-xs leading-relaxed mt-2">Equipamentos e repetidoras portáteis para cobrir grandes áreas com total estabilidade de sinal.</p>
+                        </div>
+                        <div class="pt-3 border-t border-brand-cardBorder flex justify-between items-center text-xs text-white">
+                            <span class="flex items-center text-white"><i data-lucide="wifi" class="w-4 h-4 text-white mr-1.5"></i> Cobertura Ampla</span>
+                            <span class="text-white font-semibold">Repetidoras Móveis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Shows -->
+                <div class="gallery-item eventos bg-brand-navy rounded-xl overflow-hidden border border-brand-cardBorder hover:border-brand-bluePrimary transition-all flex flex-col">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-brand-navyDark">
+                        <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80" alt="Shows e Espetáculos" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-gray-800/90 text-white border border-gray-600/50 text-[10px] font-bold uppercase px-2.5 py-1 rounded shadow-sm">Shows</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-poppins text-base font-bold text-white uppercase">Shows & Espetáculos</h3>
+                            <p class="text-gray-400 text-xs leading-relaxed mt-2">Áudio claro e fones com cancelamento de ruído para comunicação eficiente em ambientes com som alto.</p>
+                        </div>
+                        <div class="pt-3 border-t border-brand-cardBorder flex justify-between items-center text-xs text-white">
+                            <span class="flex items-center text-white"><i data-lucide="volume-x" class="w-4 h-4 text-white mr-1.5"></i> Redução de Ruído</span>
+                            <span class="text-white font-semibold">Alta Claridade</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Equipes de Segurança -->
+                <div class="gallery-item seguranca bg-brand-navy rounded-xl overflow-hidden border border-brand-cardBorder hover:border-brand-bluePrimary transition-all flex flex-col">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-brand-navyDark">
+                        <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&w=800&q=80" alt="Equipes de Segurança" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-gray-800/90 text-white border border-gray-600/50 text-[10px] font-bold uppercase px-2.5 py-1 rounded shadow-sm">Segurança</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-poppins text-base font-bold text-white uppercase">Equipes de Segurança</h3>
+                            <p class="text-gray-400 text-xs leading-relaxed mt-2">Rádios robustos e práticos com botões de acionamento rápido para contato imediato da equipe de patrulha.</p>
+                        </div>
+                        <div class="pt-3 border-t border-brand-cardBorder flex justify-between items-center text-xs text-white">
+                            <span class="flex items-center text-white"><i data-lucide="shield-check" class="w-4 h-4 text-white mr-1.5"></i> Sinal Seguro</span>
+                            <span class="text-white font-semibold">Resposta Imediata</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: Operações Diárias e Pontuais -->
+                <div class="gallery-item operacoes bg-brand-navy rounded-xl overflow-hidden border border-brand-cardBorder hover:border-brand-bluePrimary transition-all flex flex-col">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-brand-navyDark">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80" alt="Operações Diárias e Pontuais" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-gray-800/90 text-white border border-gray-600/50 text-[10px] font-bold uppercase px-2.5 py-1 rounded shadow-sm">Uso Pontual</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-poppins text-base font-bold text-white uppercase">Operações Diárias & Pontuais</h3>
+                            <p class="text-gray-400 text-xs leading-relaxed mt-2">Atendimento rápido e locação simplificada para inventários, reformas ou demandas de poucos dias.</p>
+                        </div>
+                        <div class="pt-3 border-t border-brand-cardBorder flex justify-between items-center text-xs text-white">
+                            <span class="flex items-center text-white"><i data-lucide="clock" class="w-4 h-4 text-white mr-1.5"></i> Contratação Ágil</span>
+                            <span class="text-white font-semibold">Pronta Entrega</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6: Operações de Grande Porte -->
+                <div class="gallery-item operacoes bg-brand-navy rounded-xl overflow-hidden border border-brand-cardBorder hover:border-brand-bluePrimary transition-all flex flex-col">
+                    <div class="relative h-48 sm:h-52 overflow-hidden bg-brand-navyDark">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Operações de Grande Porte" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-gray-800/90 text-white border border-gray-600/50 text-[10px] font-bold uppercase px-2.5 py-1 rounded shadow-sm">Operações Contínuas</span>
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="font-poppins text-base font-bold text-white uppercase">Operações de Grande Porte</h3>
+                            <p class="text-gray-400 text-xs leading-relaxed mt-2">Kits de radiocomunicação com suporte contínuo para obras, centros logísticos e equipes de manutenção.</p>
+                        </div>
+                        <div class="pt-3 border-t border-brand-cardBorder flex justify-between items-center text-xs text-white">
+                            <span class="flex items-center text-white"><i data-lucide="hard-hat" class="w-4 h-4 text-white mr-1.5"></i> Equipamento Resistente</span>
+                            <span class="text-white font-semibold">Suporte Dedicado</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ADSENSE BANNER MID-PAGE -->
+    <div class="max-w-7xl mx-auto px-4 py-4">
+        <div class="adsense-slot rounded-lg p-3 text-center text-xs text-gray-400 flex flex-col items-center justify-center min-h-[100px]">
+            <span class="uppercase tracking-widest text-[10px] text-brand-accent font-semibold mb-1">PUBLICIDADE / ADSENSE BANNER MID</span>
+            <div class="w-full max-w-[970px] h-[75px] bg-white/5 border border-white/10 rounded flex items-center justify-center text-gray-400 font-mono text-[10px] sm:text-xs">
+                Anúncio Responsivo In-Article (970x90 ou Adaptável)
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO COMO FUNCIONA -->
+    <section id="como-funciona" class="py-12 sm:py-16 bg-brand-navy/60 border-y border-brand-cardBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+                <span class="text-gray-300 text-xs font-bold uppercase tracking-widest">Sem Burocracia</span>
+                <h2 class="font-poppins text-xl sm:text-3xl font-extrabold text-white uppercase mt-1">Como Funciona a Locação RADIAL</h2>
+                <p class="text-gray-400 text-sm mt-2">Um processo simples e rápido para você focar no que realmente importa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                
+                <div class="group bg-brand-navy p-6 rounded-xl border border-brand-cardBorder text-center hover:border-brand-bluePrimary transition-all">
+                    <div class="w-12 h-12 rounded-full bg-gray-800 text-white border border-gray-600/50 group-hover:bg-brand-bluePrimary group-hover:border-brand-bluePrimary font-poppins font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-sm transition-colors">
+                        01
+                    </div>
+                    <h3 class="font-poppins text-base font-bold text-white uppercase mb-2">Conversa & Orçamento</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        Você fala com a gente pelo WhatsApp e explica o que precisa: quantidade de rádios e os dias do seu evento ou trabalho.
+                    </p>
+                </div>
+
+                <div class="group bg-brand-navy p-6 rounded-xl border border-brand-cardBorder text-center hover:border-brand-bluePrimary transition-all">
+                    <div class="w-12 h-12 rounded-full bg-gray-800 text-white border border-gray-600/50 group-hover:bg-brand-bluePrimary group-hover:border-brand-bluePrimary font-poppins font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-sm transition-colors">
+                        02
+                    </div>
+                    <h3 class="font-poppins text-base font-bold text-white uppercase mb-2">Tudo Pronto & Testado</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        Preparamos os rádios com canais certos, baterias 100% carregadas e fazemos os testes antes de entregar.
+                    </p>
+                </div>
+
+                <div class="group bg-brand-navy p-6 rounded-xl border border-brand-cardBorder text-center hover:border-brand-bluePrimary transition-all">
+                    <div class="w-12 h-12 rounded-full bg-gray-800 text-white border border-gray-600/50 group-hover:bg-brand-bluePrimary group-hover:border-brand-bluePrimary font-poppins font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-sm transition-colors">
+                        03
+                    </div>
+                    <h3 class="font-poppins text-base font-bold text-white uppercase mb-2">Entrega Combinada</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        Entregamos o kit organizado com fones e carregadores, além de ensinar rapidinho como usar tudo no dia a dia.
+                    </p>
+                </div>
+
+                <div class="group bg-brand-navy p-6 rounded-xl border border-brand-cardBorder text-center hover:border-brand-bluePrimary transition-all">
+                    <div class="w-12 h-12 rounded-full bg-gray-800 text-white border border-gray-600/50 group-hover:bg-brand-bluePrimary group-hover:border-brand-bluePrimary font-poppins font-bold text-lg flex items-center justify-center mx-auto mb-4 shadow-sm transition-colors">
+                        04
+                    </div>
+                    <h3 class="font-poppins text-base font-bold text-white uppercase mb-2">Apoio & Devolução</h3>
+                    <p class="text-gray-300 text-xs leading-relaxed">
+                        Ficamos à disposição durante todo o período de uso. Ao terminar, recolhemos o equipamento de forma prática.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO COTAÇÃO -->
+    <section id="cotacao" class="py-12 sm:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                
+                <!-- Coluna de Informações / Apresentação -->
+                <div class="lg:col-span-5 space-y-5 sm:space-y-6">
+                    <span class="text-gray-300 text-xs font-bold uppercase tracking-widest">Contato Direto</span>
+                    <h2 class="font-poppins text-xl sm:text-3xl lg:text-4xl font-extrabold text-white uppercase">Fale Conosco e Peça seu Orçamento</h2>
+                    <p class="text-gray-300 text-xs sm:text-sm leading-relaxed">
+                        Preencha os dados ao lado ou chame a gente no WhatsApp para receber um orçamento rápido e sem complicação.
+                    </p>
+
+                    <!-- Pontos Fortes -->
+                    <div class="space-y-2.5 pt-2">
+                        <div class="flex items-center space-x-3 text-xs text-gray-200">
+                            <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                            <span>Rádios higienizados, testados e prontos para uso.</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-xs text-gray-200">
+                            <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                            <span>Acessórios completos (fones de lapela e carregadores).</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-xs text-gray-200">
+                            <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                            <span>Atendimento próximo e suporte atencioso.</span>
                         </div>
                     </div>
 
-                    <div class="lg:col-span-7">
-                        <div class="bg-radial-cardBg border border-radial-gold/30 rounded-2xl p-6 sm:p-8 shadow-xl">
-                            
-                            <form id="calc-form" onsubmit="event.preventDefault();" class="space-y-6">
-                                
+                    <!-- Card Atendimento WhatsApp -->
+                    <a href="https://wa.me/5512996320378" target="_blank" class="p-4 bg-brand-navy rounded-lg border border-brand-cardBorder hover:border-brand-whatsapp flex items-center space-x-4 transition-all block">
+                        <div class="w-10 h-10 rounded-full bg-brand-whatsapp/20 text-brand-whatsapp flex items-center justify-center shrink-0">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-white uppercase">Prefere Falar Agora?</h4>
+                            <p class="text-[11px] text-gray-400">Clique e inicie a conversa direto no nosso WhatsApp.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Formulário -->
+                <div class="lg:col-span-7">
+                    <div class="bg-brand-navy border border-brand-cardBorder rounded-xl p-5 sm:p-8 shadow-xl">
+                        <h3 class="font-poppins text-base sm:text-lg font-bold text-white uppercase mb-6 flex items-center space-x-2">
+                            <i data-lucide="file-spreadsheet" class="w-5 h-5 text-white"></i>
+                            <span>Dados Simples para Cotação</span>
+                        </h3>
+
+                        <form id="quote-form" onsubmit="sendQuoteToWhatsApp(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">1. Modalidade do Evento</label>
-                                    <select id="event-type" onchange="calculateEstimate()" class="w-full bg-radial-navy border border-gray-700 rounded-lg px-4 py-3 text-white text-sm focus:border-radial-gold focus:outline-none">
-                                        <option value="corporativo">Congresso / Feira Corporativa (R$ 2.800 base)</option>
-                                        <option value="gala">Casamento / Baile de Gala (R$ 3.200 base)</option>
-                                        <option value="esportivo">Evento Esportivo / Arena (R$ 3.500 base)</option>
-                                        <option value="formatura">Formatura / Celebração (R$ 2.500 base)</option>
+                                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">Seu Nome *</label>
+                                    <input type="text" id="quote-name" required class="w-full bg-brand-navyDark border border-brand-cardBorder rounded-lg p-3 text-xs text-white focus:border-brand-bluePrimary focus:outline-none transition-colors" placeholder="Ex: Marcos Silva">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">Empresa ou Evento *</label>
+                                    <input type="text" id="quote-company" required class="w-full bg-brand-navyDark border border-brand-cardBorder rounded-lg p-3 text-xs text-white focus:border-brand-bluePrimary focus:outline-none transition-colors" placeholder="Nome do seu evento ou empresa">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">Qtd. de Rádios *</label>
+                                    <select id="quote-qty" required class="w-full bg-brand-navyDark border border-brand-cardBorder rounded-lg p-3 text-xs text-white focus:border-brand-bluePrimary focus:outline-none transition-colors">
+                                        <option value="2 a 5 Rádios">2 a 5 Rádios HT</option>
+                                        <option value="6 a 15 Rádios">6 a 15 Rádios HT</option>
+                                        <option value="16 a 30 Rádios">16 a 30 Rádios HT</option>
+                                        <option value="Mais de 30 Rádios">Mais de 30 Rádios HT</option>
                                     </select>
                                 </div>
-
                                 <div>
-                                    <div class="flex justify-between items-center mb-2">
-                                        <label class="text-xs font-semibold uppercase tracking-wider text-gray-300">2. Estimativa de Convidados / Público</label>
-                                        <span id="public-val" class="text-radial-gold font-bold text-sm font-mono">500 pessoas</span>
-                                    </div>
-                                    <input type="range" id="public-range" min="100" max="5000" step="100" value="500" oninput="calculateEstimate()" class="w-full accent-radial-gold h-2 bg-gray-700 rounded-lg cursor-pointer">
+                                    <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">Período de Uso *</label>
+                                    <select id="quote-period" required class="w-full bg-brand-navyDark border border-brand-cardBorder rounded-lg p-3 text-xs text-white focus:border-brand-bluePrimary focus:outline-none transition-colors">
+                                        <option value="1 a 3 dias (Evento)">1 a 3 dias (Diárias)</option>
+                                        <option value="4 a 10 dias (Semanal)">4 a 10 dias (Semanal)</option>
+                                        <option value="Uso Contínuo / Mensal">Contrato Mensal / Fixo</option>
+                                    </select>
                                 </div>
+                            </div>
 
-                                <div>
-                                    <div class="flex justify-between items-center mb-2">
-                                        <label class="text-xs font-semibold uppercase tracking-wider text-gray-300">3. Horas de Transmissão Indoor</label>
-                                        <span id="hours-val" class="text-radial-gold font-bold text-sm font-mono">6 horas</span>
-                                    </div>
-                                    <input type="range" id="hours-range" min="2" max="18" step="1" value="6" oninput="calculateEstimate()" class="w-full accent-radial-gold h-2 bg-gray-700 rounded-lg cursor-pointer">
-                                </div>
-
-                                <div>
-                                    <label class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">4. Serviços Complementares</label>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                        <label class="flex items-center space-x-2 bg-radial-navy p-3 rounded border border-gray-800 cursor-pointer text-xs text-gray-300">
-                                            <input type="checkbox" id="add-locutor" onchange="calculateEstimate()" class="accent-radial-gold" checked>
-                                            <span>Locutor Cerimonial Vivo (+R$ 800)</span>
-                                        </label>
-                                        <label class="flex items-center space-x-2 bg-radial-navy p-3 rounded border border-gray-800 cursor-pointer text-xs text-gray-300">
-                                            <input type="checkbox" id="add-vinhetas" onchange="calculateEstimate()" class="accent-radial-gold" checked>
-                                            <span>Gravação de Vinhetas Custom (+R$ 500)</span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="bg-radial-navy p-5 rounded-xl border border-radial-gold/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-                                    <div>
-                                        <span class="text-xs text-gray-400 block">Estimativa do Projeto</span>
-                                        <span id="total-price" class="text-3xl font-serif-heading font-bold text-radial-gold">R$ 4.500,00</span>
-                                    </div>
-                                    <button type="button" onclick="sendCalcToWhatsApp()" class="w-full sm:w-auto px-6 py-3.5 bg-radial-whatsapp hover:bg-emerald-600 text-white font-bold rounded text-sm transition-all shadow-md flex items-center justify-center space-x-2">
-                                        <i class="fa-brands fa-whatsapp text-lg"></i>
-                                        <span>Solicitar via WhatsApp</span>
-                                    </button>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- DEPOIMENTOS DE CLIENTES -->
-        <section id="depoimentos" class="py-20 border-t border-radial-gold/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-2xl mx-auto mb-16">
-                    <span class="text-radial-gold text-xs font-semibold uppercase tracking-widest">Opinião de Clientes</span>
-                    <h2 class="font-serif-heading text-3xl sm:text-4xl font-bold text-white mt-2">Quem Contratou a Radial</h2>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    
-                    <div class="bg-radial-cardBg p-6 rounded-xl border border-gray-800 relative">
-                        <div class="text-radial-gold mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6 italic">
-                            "A Radial foi contratada para a nossa feira corporativa de negócios. A locução ao vivo anunciando os patrocinadores e orientando as palestras deu um tom impecável."
-                        </p>
-                        <div class="flex items-center space-x-3 pt-4 border-t border-gray-800">
-                            <div class="w-10 h-10 rounded-full bg-radial-gold/20 text-radial-gold font-serif-heading font-bold flex items-center justify-center">RM</div>
                             <div>
-                                <h4 class="text-sm font-bold text-white">Roberto Mendes</h4>
-                                <p class="text-[11px] text-gray-400">Organizador Expo Negócios</p>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">Acessórios Necessários</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-300">
+                                    <label class="flex items-center space-x-2 bg-brand-navyDark p-2.5 rounded-lg border border-brand-cardBorder cursor-pointer hover:border-brand-bluePrimary transition-colors">
+                                        <input type="checkbox" id="acc-fone" class="accent-brand-bluePrimary" checked>
+                                        <span>Fones de Lapela com PTT</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 bg-brand-navyDark p-2.5 rounded-lg border border-brand-cardBorder cursor-pointer hover:border-brand-bluePrimary transition-colors">
+                                        <input type="checkbox" id="acc-repetidora" class="accent-brand-bluePrimary">
+                                        <span>Repetidora de Sinal</span>
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="bg-radial-cardBg p-6 rounded-xl border border-gray-800 relative">
-                        <div class="text-radial-gold mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6 italic">
-                            "Contratamos o estúdio de rádio para o nosso casamento. Eles criaram uma programação especial com recados dos convidados gravados na hora. Inesquecível!"
-                        </p>
-                        <div class="flex items-center space-x-3 pt-4 border-t border-gray-800">
-                            <div class="w-10 h-10 rounded-full bg-radial-gold/20 text-radial-gold font-serif-heading font-bold flex items-center justify-center">CS</div>
                             <div>
-                                <h4 class="text-sm font-bold text-white">Camila Siqueira</h4>
-                                <p class="text-[11px] text-gray-400">Noiva & Cliente</p>
+                                <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1.5">Cidade ou Detalhes</label>
+                                <textarea id="quote-obs" rows="3" class="w-full bg-brand-navyDark border border-brand-cardBorder rounded-lg p-3 text-xs text-white focus:border-brand-bluePrimary focus:outline-none transition-colors" placeholder="Conte brevemente onde será o uso ou alguma dúvida..."></textarea>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="bg-radial-cardBg p-6 rounded-xl border border-gray-800 relative">
-                        <div class="text-radial-gold mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6 italic">
-                            "Estrutura extremamente elegante. Os microfones e a bancada combinaram perfeitamente com a decoração do leilão de gala que organizamos."
-                        </p>
-                        <div class="flex items-center space-x-3 pt-4 border-t border-gray-800">
-                            <div class="w-10 h-10 rounded-full bg-radial-gold/20 text-radial-gold font-serif-heading font-bold flex items-center justify-center">AL</div>
-                            <div>
-                                <h4 class="text-sm font-bold text-white">André Lemos</h4>
-                                <p class="text-[11px] text-gray-400">Curador Leilões de Arte</p>
-                            </div>
-                        </div>
+                            <button type="submit" class="w-full py-3.5 rounded-lg bg-brand-whatsapp hover:bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider transition shadow-md flex items-center justify-center space-x-2">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                                <span>Enviar Cotação para o WhatsApp</span>
+                            </button>
+                        </form>
                     </div>
-
                 </div>
-            </div>
-        </section>
 
-        <!-- CONTATO E FORMULÁRIO -->
-        <section id="contato" class="py-20 bg-radial-navyLight/40 border-t border-radial-gold/10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    
-                    <div class="lg:col-span-5 space-y-6">
-                        <span class="text-radial-gold text-xs font-semibold uppercase tracking-widest">Fale Conosco</span>
-                        <h2 class="font-serif-heading text-3xl sm:text-4xl font-bold text-white">Atendimento Direto</h2>
-                        <p class="text-gray-300 text-sm font-light leading-relaxed">
-                            A equipe técnica da Radial está disponível para tirar dúvidas sobre transmissões indoor e orçamentos para o seu estado.
-                        </p>
-
-                        <div class="space-y-4 pt-2">
-                            <div class="flex items-center space-x-4 text-gray-300 text-sm">
-                                <div class="w-10 h-10 rounded-lg bg-radial-navy flex items-center justify-center text-radial-whatsapp border border-radial-gold/20">
-                                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-gray-400">WhatsApp Comercial</p>
-                                    <p class="font-semibold text-white">(12) 99661-8420</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center space-x-4 text-gray-300 text-sm">
-                                <div class="w-10 h-10 rounded-lg bg-radial-navy flex items-center justify-center text-radial-gold border border-radial-gold/20">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-gray-400">E-mail Comercial</p>
-                                    <p class="font-semibold text-white">contato@radialeventos.com.br</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="lg:col-span-7">
-                        <div class="bg-radial-cardBg border border-radial-gold/30 rounded-2xl p-6 sm:p-8">
-                            <h3 class="text-xl font-serif-heading font-bold text-white mb-6">Mensagem Rápida</h3>
-                            
-                            <form id="contact-form" onsubmit="handleDirectContact(event)" class="space-y-4">
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div>
-                                        <label class="block text-xs text-gray-300 uppercase tracking-wider mb-1">Nome *</label>
-                                        <input type="text" id="contact-name" required class="w-full bg-radial-navy border border-gray-700 rounded p-3 text-sm text-white focus:border-radial-gold focus:outline-none" placeholder="Ex: Roberto">
-                                    </div>
-                                    <div>
-                                        <label class="block text-xs text-gray-300 uppercase tracking-wider mb-1">E-mail *</label>
-                                        <input type="email" id="contact-email" required class="w-full bg-radial-navy border border-gray-700 rounded p-3 text-sm text-white focus:border-radial-gold focus:outline-none" placeholder="roberto@empresa.com">
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label class="block text-xs text-gray-300 uppercase tracking-wider mb-1">Mensagem ou Dúvida</label>
-                                    <textarea id="contact-message" rows="4" required class="w-full bg-radial-navy border border-gray-700 rounded p-3 text-sm text-white focus:border-radial-gold focus:outline-none" placeholder="Descreva brevemente como gostaria da rádio no seu evento..."></textarea>
-                                </div>
-
-                                <button type="submit" class="w-full py-3.5 rounded bg-radial-whatsapp hover:bg-emerald-600 text-white font-bold text-sm transition-all shadow-md flex items-center justify-center space-x-2">
-                                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                                    <span>Enviar via WhatsApp</span>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ADSENSE BANNER FOOTER -->
-        <div class="max-w-7xl mx-auto px-4 py-6">
-            <div class="adsense-placeholder rounded-lg p-2 text-center text-xs text-gray-400 flex flex-col items-center justify-center min-h-[90px]">
-                <span class="uppercase tracking-widest text-[10px] text-radial-gold/70 mb-1">PUBLICIDADE / ADSENSE FOOTER</span>
-                <div class="w-full max-w-[728px] h-[60px] bg-white/5 border border-white/10 rounded flex items-center justify-center text-gray-500 font-mono text-xs">
-                    Banner Rodapé (728x90)
-                </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- FOOTER E CONFORMIDADE ADSENSE -->
-    <footer class="bg-radial-navy border-t border-gray-800 py-12 text-gray-400 text-xs">
+    <!-- SEÇÃO CONTATO -->
+    <section id="contato" class="py-12 sm:py-16 bg-brand-navy/60 border-t border-brand-cardBorder">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 
-                <div class="space-y-3">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 rounded-full bg-radial-gold flex items-center justify-center text-radial-navy font-bold text-sm">
-                            <i class="fa-solid fa-tower-cell"></i>
-                        </div>
-                        <span class="font-serif-heading text-lg font-bold text-white">RADIAL</span>
-                    </div>
-                    <p class="text-gray-400 leading-relaxed">
-                        Estúdio móvel e rádio personalizada sob demanda para feiras, congressos e celebrações exclusivas.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold uppercase text-xs tracking-wider mb-4">Navegação</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="hover:text-radial-gold transition">Início</a></li>
-                        <li><a href="#como-funciona" class="hover:text-radial-gold transition">Como Funciona</a></li>
-                        <li><a href="#exposicao" class="hover:text-radial-gold transition">Projetos & Equipamentos</a></li>
-                        <li><a href="#orcamento" class="hover:text-radial-gold transition">Simulador de Orçamento</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold uppercase text-xs tracking-wider mb-4">Expansão Futura (Abas)</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" onclick="alert('Esta aba será liberada na expansão do portal!'); return false;" class="hover:text-radial-gold transition">Blog & Artigos de Áudio</a></li>
-                        <li><a href="#" onclick="alert('Esta aba será liberada na expansão do portal!'); return false;" class="hover:text-radial-gold transition">Galeria de Locutores</a></li>
-                        <li><a href="#" onclick="alert('Esta aba será liberada na expansão do portal!'); return false;" class="hover:text-radial-gold transition">Área do Cliente</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-white font-semibold uppercase text-xs tracking-wider mb-4">Conformidade AdSense</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" onclick="openModal('privacidade')" class="hover:text-radial-gold transition">Política de Privacidade</a></li>
-                        <li><a href="#" onclick="openModal('termos')" class="hover:text-radial-gold transition">Termos de Serviço</a></li>
-                        <li><a href="#" onclick="openModal('cookies')" class="hover:text-radial-gold transition">Política de Cookies</a></li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between text-gray-500 text-center sm:text-left gap-4">
-                <p>&copy; 2026 Radial - Rádio para Eventos. Todos os direitos reservados.</p>
-                <div class="flex space-x-4 text-base text-gray-400">
-                    <a href="#" class="hover:text-radial-gold"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-radial-gold"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" class="hover:text-radial-gold"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- WIDGET CHATBOT INTERATIVO PARA WHATSAPP -->
-    <div id="chatbot-container" class="fixed bottom-5 right-5 z-50 flex flex-col items-end">
-        
-        <!-- Janela do Chatbot (Modal Flutuante) -->
-        <div id="chatbot-window" class="hidden w-[90vw] sm:w-[380px] bg-radial-cardBg border border-radial-gold/40 rounded-2xl shadow-2xl mb-4 overflow-hidden flex flex-col transition-all duration-300">
-            
-            <!-- Header do Chat -->
-            <div class="bg-radial-navyLight px-4 py-3 border-b border-radial-gold/20 flex items-center justify-between">
-                <div class="flex items-center space-x-3">
-                    <div class="relative">
-                        <div class="w-9 h-9 rounded-full bg-radial-gold text-radial-navy flex items-center justify-center font-bold">
-                            <i class="fa-solid fa-robot"></i>
-                        </div>
-                        <span class="w-2.5 h-2.5 rounded-full bg-radial-whatsapp absolute bottom-0 right-0 border border-radial-navy"></span>
+                <a href="https://wa.me/5512996320378" target="_blank" class="bg-brand-navy p-5 sm:p-6 rounded-xl border border-brand-cardBorder hover:border-brand-whatsapp transition-all flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-lg bg-brand-navyDark text-brand-whatsapp flex items-center justify-center shrink-0 border border-brand-cardBorder">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <h4 class="text-sm font-bold text-white">Assistente Radial</h4>
-                        <p class="text-[10px] text-gray-400">Atendimento Automático WhatsApp</p>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Atendimento WhatsApp</p>
+                        <p class="text-white font-poppins font-bold text-sm sm:text-base mt-0.5">(12) 99632-0378</p>
                     </div>
-                </div>
-                <button onclick="toggleChatbot()" class="text-gray-400 hover:text-white p-1">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <!-- Corpo da Conversa -->
-            <div id="chat-messages" class="p-4 h-[320px] overflow-y-auto space-y-3 chat-scroll text-xs">
-                <!-- Mensagem do Bot 1 -->
-                <div class="flex items-start space-x-2">
-                    <div class="w-6 h-6 rounded-full bg-radial-gold text-radial-navy flex items-center justify-center text-[10px] shrink-0 mt-1">
-                        <i class="fa-solid fa-robot"></i>
-                    </div>
-                    <div class="bg-radial-navy p-3 rounded-xl rounded-tl-none border border-gray-800 text-gray-200 leading-relaxed">
-                        Olá! Sou o assistente virtual da **Radial - Rádio para Eventos**. 👋<br><br>
-                        Não somos uma rádio de sintonia aberta, montamos uma **estação exclusiva no seu evento**. Qual o tipo de evento que você está planejando?
-                    </div>
-                </div>
-
-                <!-- Botões de Opção Rápida no Bot -->
-                <div id="chat-options" class="flex flex-col space-y-2 pl-8">
-                    <button onclick="handleChatSelect('Congresso / Feira Corporativa')" class="text-left px-3 py-2 bg-radial-navyLight hover:bg-radial-gold hover:text-radial-navy border border-radial-gold/30 rounded-lg text-xs font-medium text-radial-gold transition">
-                        🏢 Congresso / Feira Corporativa
-                    </button>
-                    <button onclick="handleChatSelect('Casamento ou Festa Social')" class="text-left px-3 py-2 bg-radial-navyLight hover:bg-radial-gold hover:text-radial-navy border border-radial-gold/30 rounded-lg text-xs font-medium text-radial-gold transition">
-                        💍 Casamento ou Festa Social
-                    </button>
-                    <button onclick="handleChatSelect('Evento Esportivo / Feira Agro')" class="text-left px-3 py-2 bg-radial-navyLight hover:bg-radial-gold hover:text-radial-navy border border-radial-gold/30 rounded-lg text-xs font-medium text-radial-gold transition">
-                        🏆 Evento Esportivo / Feira Agro
-                    </button>
-                    <button onclick="handleChatSelect('Tirar Dúvidas Gerais')" class="text-left px-3 py-2 bg-radial-navyLight hover:bg-radial-gold hover:text-radial-navy border border-radial-gold/30 rounded-lg text-xs font-medium text-radial-gold transition">
-                        ❓ Tirar Dúvidas Frequentes
-                    </button>
-                </div>
-            </div>
-
-            <!-- Footer do Chat (Ação WhatsApp Final) -->
-            <div class="p-3 bg-radial-navy border-t border-gray-800 flex items-center space-x-2">
-                <input type="text" id="chat-user-input" placeholder="Digite seu nome ou dúvida..." class="w-full bg-radial-cardBg border border-gray-700 rounded px-3 py-2 text-xs text-white focus:outline-none focus:border-radial-gold" onkeypress="if(event.key==='Enter') sendCustomChatMessage()">
-                <button onclick="sendCustomChatMessage()" class="w-9 h-9 rounded bg-radial-whatsapp text-white flex items-center justify-center shrink-0 hover:bg-emerald-600 transition">
-                    <i class="fa-solid fa-paper-plane text-xs"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Botão Flutuante (Trigger) -->
-        <button onclick="toggleChatbot()" class="w-14 h-14 rounded-full bg-radial-whatsapp text-white text-2xl flex items-center justify-center shadow-2xl chat-pulse hover:scale-105 transition-transform" aria-label="Abrir Chatbot WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-        </button>
-    </div>
-
-    <!-- MODAL DE POLÍTICAS ADSENSE -->
-    <div id="policy-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-radial-cardBg border border-radial-gold/40 rounded-xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto text-gray-300 text-sm">
-            <div class="flex justify-between items-center mb-4 border-b border-gray-800 pb-2">
-                <h3 id="modal-title" class="font-serif-heading text-lg font-bold text-white">Política</h3>
-                <button onclick="closeModal()" class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-xl"></i></button>
-            </div>
-            <div id="modal-content" class="space-y-3 font-light text-xs sm:text-sm">
-                <!-- Conteúdo via JS -->
-            </div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT DE LÓGICA E INTERAÇÃO WHATSAPP -->
-    <script>
-        // Número WhatsApp de Atendimento
-        const PHONE_WHATSAPP = "5512996618420";
-
-        // --- 1. TOGGLE MENU MOBILE ---
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-
-        function toggleMobileMenu() {
-            mobileMenu.classList.toggle('hidden');
-        }
-
-        // --- 2. CHATBOT INTERATIVO PARA WHATSAPP ---
-        let chatState = {
-            eventType: '',
-            step: 1
-        };
-
-        function toggleChatbot() {
-            const chatWindow = document.getElementById('chatbot-window');
-            chatWindow.classList.toggle('hidden');
-        }
-
-        function handleChatSelect(optionText) {
-            const messagesContainer = document.getElementById('chat-messages');
-            const optionsContainer = document.getElementById('chat-options');
-
-            // Adiciona a escolha do usuário na tela
-            const userBubble = document.createElement('div');
-            userBubble.className = "flex justify-end my-2";
-            userBubble.innerHTML = `
-                <div class="bg-radial-gold text-radial-navy p-2.5 rounded-xl rounded-tr-none font-semibold text-xs max-w-[80%]">
-                    ${optionText}
-                </div>
-            `;
-            messagesContainer.appendChild(userBubble);
-
-            // Esconde as opções anteriores
-            if(optionsContainer) optionsContainer.classList.add('hidden');
-
-            chatState.eventType = optionText;
-
-            // Resposta do Bot
-            setTimeout(() => {
-                const botBubble = document.createElement('div');
-                botBubble.className = "flex items-start space-x-2 my-2";
-
-                if (optionText === 'Tirar Dúvidas Gerais') {
-                    botBubble.innerHTML = `
-                        <div class="w-6 h-6 rounded-full bg-radial-gold text-radial-navy flex items-center justify-center text-[10px] shrink-0 mt-1">
-                            <i class="fa-solid fa-robot"></i>
-                        </div>
-                        <div class="bg-radial-navy p-3 rounded-xl rounded-tl-none border border-gray-800 text-gray-200 leading-relaxed">
-                            A **Radial** é um estúdio móvel completo. Nós levamos caixas, transmissores indoor e locutor para o local.<br><br>
-                            Deseja abrir o atendimento no WhatsApp para tirar dúvidas diretamente com um especialista?
-                        </div>
-                    `;
-                    messagesContainer.appendChild(botBubble);
-
-                    // Botão de Finalizar no Whats
-                    addWhatsAppChatButton("Tirar dúvidas gerais sobre a Rádio Indoor Radial");
-
-                } else {
-                    botBubble.innerHTML = `
-                        <div class="w-6 h-6 rounded-full bg-radial-gold text-radial-navy flex items-center justify-center text-[10px] shrink-0 mt-1">
-                            <i class="fa-solid fa-robot"></i>
-                        </div>
-                        <div class="bg-radial-navy p-3 rounded-xl rounded-tl-none border border-gray-800 text-gray-200 leading-relaxed">
-                            Ótimo! Para o segmento **${optionText}**, nós preparamos playlists sob medida e vinhetas personalizadas.<br><br>
-                            Clique no botão abaixo para encaminhar sua solicitação direta para o WhatsApp da nossa equipe técnica.
-                        </div>
-                    `;
-                    messagesContainer.appendChild(botBubble);
-
-                    addWhatsAppChatButton(`Gostaria de cotar uma Rádio para o evento tipo: ${optionText}`);
-                }
-
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            }, 600);
-        }
-
-        function addWhatsAppChatButton(textPrompt) {
-            const messagesContainer = document.getElementById('chat-messages');
-            const actionContainer = document.createElement('div');
-            actionContainer.className = "pt-2 flex justify-center";
-
-            const encodedText = encodeURIComponent(`Olá Radial! ${textPrompt}`);
-            const waUrl = `https://wa.me/${PHONE_WHATSAPP}?text=${encodedText}`;
-
-            actionContainer.innerHTML = `
-                <a href="${waUrl}" target="_blank" class="w-full py-2.5 px-4 bg-radial-whatsapp hover:bg-emerald-600 text-white font-bold rounded-lg text-center flex items-center justify-center space-x-2 shadow transition">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>Abrir Conversa no WhatsApp</span>
                 </a>
-            `;
-            messagesContainer.appendChild(actionContainer);
-            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+                <a href="mailto:contato@radialcomunicacao.com.br" class="bg-brand-navy p-5 sm:p-6 rounded-xl border border-brand-cardBorder hover:border-brand-bluePrimary transition-all flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-lg bg-brand-navyDark text-brand-bluePrimary flex items-center justify-center shrink-0 border border-brand-cardBorder">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <div class="overflow-hidden">
+                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">E-mail Comercial</p>
+                        <p class="text-white font-poppins font-bold text-xs sm:text-sm mt-0.5 truncate">contato@radialcomunicacao.com.br</p>
+                    </div>
+                </a>
+
+                <div class="bg-brand-navy p-5 sm:p-6 rounded-xl border border-brand-cardBorder flex items-center space-x-4 sm:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 rounded-lg bg-brand-navyDark text-white flex items-center justify-center shrink-0 border border-brand-cardBorder">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Cobertura de Atendimento</p>
+                        <p class="text-white font-poppins font-bold text-xs sm:text-sm mt-0.5">Vale do Paraíba & Região</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ADSENSE BANNER FOOTER -->
+    <div class="max-w-7xl mx-auto px-4 py-6">
+        <div class="adsense-slot rounded-lg p-2 text-center text-xs text-gray-400 flex flex-col items-center justify-center min-h-[90px]">
+            <span class="uppercase tracking-widest text-[10px] text-brand-accent font-semibold mb-1">PUBLICIDADE / ADSENSE FOOTER</span>
+            <div class="w-full max-w-[728px] h-[60px] bg-white/5 border border-white/10 rounded flex items-center justify-center text-gray-400 font-mono text-[10px] sm:text-xs">
+                Banner Rodapé (728x90)
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER E CONFORMIDADE ADSENSE / LGPD -->
+<footer class="bg-brand-navyDark border-t border-brand-cardBorder py-12 text-gray-400 text-xs mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            
+            <div class="space-y-5">
+                <div class="flex items-center">
+                    <img src="https://i.imgur.com/s0KZBLx.png" alt="Logo RADIAL" class="h-12 w-auto rounded p-1 bg-white">
+                </div>
+                <p class="text-gray-400 leading-relaxed text-xs">
+                    Locação de rádios comunicadores (Walkie-Talkies), repetidoras e acessórios para eventos, segurança e operações.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-poppins font-bold uppercase text-xs tracking-wider mb-3">Navegação Principal</h4>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="hover:text-white transition">Início</a></li>
+                    <li><a href="#solucoes" class="hover:text-white transition">Aplicações</a></li>
+                    <li><a href="#solucoes-comunicacao" class="hover:text-white transition">Soluções</a></li>
+                    <li><a href="#como-funciona" class="hover:text-white transition">Como Funciona</a></li>
+                    <li><a href="#cotacao" class="hover:text-white transition">Solicitar Cotação</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-poppins font-bold uppercase text-xs tracking-wider mb-3">Serviços & Módulos</h4>
+                <ul class="space-y-2">
+                    <li><a href="#cotacao" class="hover:text-brand-bluePrimary transition">Locação de Walkie-Talkies</a></li>
+                    <li><a href="#solucoes-comunicacao" class="hover:text-brand-bluePrimary transition">Estações Repetidoras</a></li>
+                    <li><a href="#cotacao" class="hover:text-brand-bluePrimary transition">Projetos de Frequência</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-poppins font-bold uppercase text-xs tracking-wider mb-3">Privacidade & LGPD</h4>
+                <ul class="space-y-2">
+                    <li><a href="javascript:void(0)" onclick="openModal('privacidade')" class="hover:text-white transition">Política de Privacidade</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('termos')" class="hover:text-white transition">Termos de Serviço</a></li>
+                    <li><a href="javascript:void(0)" onclick="openModal('cookies')" class="hover:text-white transition">Política de Cookies & AdSense</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="pt-8 border-t border-brand-cardBorder flex flex-col sm:flex-row items-center justify-between text-gray-500 text-center sm:text-left gap-4">
+            <p>&copy; 2026 RADIAL Radiocomunicação. Todos os direitos reservados.</p>
+            <div class="flex space-x-4 text-gray-400">
+                <a href="https://wa.me/5512996320378" target="_blank" class="hover:text-white transition" aria-label="WhatsApp"><i data-lucide="message-circle" class="w-4 h-4"></i></a>
+                <a href="mailto:contato@radialcomunicacao.com.br" class="hover:text-white transition" aria-label="E-mail"><i data-lucide="mail" class="w-4 h-4"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- WIDGET CHATBOT WHATSAPP -->
+<div id="chatbot-container" class="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40 flex flex-col items-end">
+    
+    <!-- Janela do Chatbot -->
+    <div id="chatbot-window" class="hidden w-[calc(100vw-2rem)] sm:w-[360px] bg-brand-navy border border-brand-cardBorder rounded-xl shadow-2xl mb-4 overflow-hidden flex flex-col transition-all">
+        
+        <!-- Header do Chat -->
+        <div class="bg-brand-navyDark px-4 py-3 border-b border-brand-cardBorder flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-full bg-brand-bluePrimary text-white flex items-center justify-center font-bold text-xs shrink-0">
+                    <i data-lucide="headphones" class="w-4 h-4"></i>
+                </div>
+                <div>
+                    <h4 class="text-xs font-poppins font-bold text-white uppercase">Atendimento RADIAL</h4>
+                    <p class="text-[10px] text-gray-400">Suporte Técnico & Cotação</p>
+                </div>
+            </div>
+            <button onclick="toggleChatbot()" class="text-gray-400 hover:text-white p-1">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+        </div>
+
+        <!-- Corpo das Mensagens -->
+        <div id="chat-messages" class="p-4 h-[280px] sm:h-[300px] overflow-y-auto space-y-3 custom-scroll text-xs">
+            <div class="flex items-start space-x-2">
+                <div class="w-6 h-6 rounded bg-brand-bluePrimary text-white flex items-center justify-center text-[10px] shrink-0 mt-0.5">
+                    <i data-lucide="bot" class="w-3.5 h-3.5"></i>
+                </div>
+                <div class="bg-brand-navyDark p-3 rounded-lg border border-brand-cardBorder text-gray-200 leading-relaxed">
+                    Olá! Sou o assistente virtual da **RADIAL**. 📻<br><br>
+                    Qual o tipo de evento ou operação que você precisa atender?
+                </div>
+            </div>
+
+            <div id="chat-options" class="flex flex-col space-y-2 pl-8">
+                <button onclick="handleChatSelect('Feiras / Shows / Eventos')" class="text-left px-3 py-2 bg-brand-navyDark hover:bg-brand-bluePrimary hover:text-white border border-brand-cardBorder rounded-md text-xs font-medium text-gray-200 transition">
+                    🎪 Feiras / Shows / Eventos
+                </button>
+                <button onclick="handleChatSelect('Segurança Privada / Brigada')" class="text-left px-3 py-2 bg-brand-navyDark hover:bg-brand-bluePrimary hover:text-white border border-brand-cardBorder rounded-md text-xs font-medium text-gray-200 transition">
+                    🛡️ Segurança Privada / Brigada
+                </button>
+                <button onclick="handleChatSelect('Logística / Indústria')" class="text-left px-3 py-2 bg-brand-navyDark hover:bg-brand-bluePrimary hover:text-white border border-brand-cardBorder rounded-md text-xs font-medium text-gray-200 transition">
+                    🏗️ Logística / Indústria
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer Chat -->
+        <div class="p-3 bg-brand-navyDark border-t border-brand-cardBorder flex items-center space-x-2">
+            <input type="text" id="chat-user-input" placeholder="Digite sua mensagem..." class="w-full bg-brand-navy border border-brand-cardBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-bluePrimary" onkeypress="if(event.key==='Enter') sendCustomChatMessage()">
+            <button onclick="sendCustomChatMessage()" class="w-8 h-8 rounded-lg bg-brand-whatsapp text-white flex items-center justify-center shrink-0 hover:bg-emerald-600 transition">
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Botão Flutuante -->
+    <button onclick="toggleChatbot()" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-brand-whatsapp text-white shadow-2xl hover:scale-105 transition-transform flex items-center justify-center" aria-label="Abrir Chatbot WhatsApp">
+        <i data-lucide="message-circle" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+    </button>
+</div>
+
+<!-- MODAL DE POLÍTICAS ADSENSE / LGPD -->
+<div id="policy-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-brand-navy border border-brand-cardBorder rounded-xl p-6 max-w-xl w-full max-h-[80vh] overflow-y-auto text-gray-300 text-xs sm:text-sm">
+        <div class="flex justify-between items-center mb-4 border-b border-brand-cardBorder pb-2">
+            <h3 id="modal-title" class="font-poppins font-bold text-base text-white uppercase">Política</h3>
+            <button onclick="closeModal()" class="text-gray-400 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+        <div id="modal-content" class="space-y-3 font-light leading-relaxed">
+            <!-- Conteúdo dinâmico -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // Número Comercial WhatsApp (DDD + Número)
+    const PHONE_WHATSAPP = "5512996320378";
+
+    // Inicializar Lucide Icons
+    lucide.createIcons();
+
+    // 1. Mobile Menu Toggle e Animações
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+
+    function toggleMobileMenu() {
+        const isOpen = !mobileMenu.classList.contains('translate-x-full');
+
+        if (isOpen) {
+            mobileMenu.classList.add('translate-x-full');
+            mobileMenuOverlay.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenuOverlay.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        } else {
+            mobileMenuOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuOverlay.classList.remove('opacity-0');
+                mobileMenu.classList.remove('translate-x-full');
+            }, 10);
+            document.body.style.overflow = 'hidden';
         }
+    }
 
-        function sendCustomChatMessage() {
-            const input = document.getElementById('chat-user-input');
-            const text = input.value.trim();
-            if (!text) return;
+    // 2. Chatbot WhatsApp
+    function toggleChatbot() {
+        const chatWindow = document.getElementById('chatbot-window');
+        chatWindow.classList.toggle('hidden');
+    }
 
-            const messagesContainer = document.getElementById('chat-messages');
+    function handleChatSelect(optionText) {
+        const messagesContainer = document.getElementById('chat-messages');
+        const optionsContainer = document.getElementById('chat-options');
 
-            const userBubble = document.createElement('div');
-            userBubble.className = "flex justify-end my-2";
-            userBubble.innerHTML = `
-                <div class="bg-radial-gold text-radial-navy p-2.5 rounded-xl rounded-tr-none font-semibold text-xs max-w-[80%]">
-                    ${text}
+        const userBubble = document.createElement('div');
+        userBubble.className = "flex justify-end my-2";
+        userBubble.innerHTML = `
+            <div class="bg-blue-600 text-white p-2.5 rounded-lg font-bold text-xs max-w-[80%]">
+                ${optionText}
+            </div>
+        `;
+        messagesContainer.appendChild(userBubble);
+
+        if (optionsContainer) optionsContainer.classList.add('hidden');
+
+        setTimeout(() => {
+            const botBubble = document.createElement('div');
+            botBubble.className = "flex items-start space-x-2 my-2";
+            botBubble.innerHTML = `
+                <div class="w-6 h-6 rounded bg-brand-bluePrimary text-white flex items-center justify-center text-[10px] shrink-0 mt-0.5">
+                    <i data-lucide="bot" class="w-3.5 h-3.5"></i>
+                </div>
+                <div class="bg-brand-navyDark p-3 rounded-lg border border-brand-cardBorder text-gray-200 leading-relaxed">
+                    Excelente! Para **${optionText}**, oferecemos fones anatômicos PTT e rádios com bateria duradoura.<br><br>
+                    Clique no botão abaixo para conversar no WhatsApp:
                 </div>
             `;
-            messagesContainer.appendChild(userBubble);
-            input.value = '';
+            messagesContainer.appendChild(botBubble);
+            lucide.createIcons();
+            addWhatsAppChatButton(`Olá! Gostaria de cotar rádios para a demanda: ${optionText}`);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }, 400);
+    }
 
-            setTimeout(() => {
-                addWhatsAppChatButton(`Mensagem do site: "${text}"`);
-            }, 400);
+    function addWhatsAppChatButton(textPrompt) {
+        const messagesContainer = document.getElementById('chat-messages');
+        const actionContainer = document.createElement('div');
+        actionContainer.className = "pt-2 flex justify-center";
+
+        const encodedText = encodeURIComponent(textPrompt);
+        const waUrl = `https://wa.me/${PHONE_WHATSAPP}?text=${encodedText}`;
+
+        actionContainer.innerHTML = `
+            <a href="${waUrl}" target="_blank" class="w-full py-2.5 px-4 bg-brand-whatsapp hover:bg-emerald-600 text-white font-bold rounded-lg text-center flex items-center justify-center space-x-2 transition uppercase text-xs">
+                <i data-lucide="message-circle" class="w-4 h-4"></i>
+                <span>Conversar no WhatsApp</span>
+            </a>
+        `;
+        messagesContainer.appendChild(actionContainer);
+        lucide.createIcons();
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function sendCustomChatMessage() {
+        const input = document.getElementById('chat-user-input');
+        const text = input.value.trim();
+        if (!text) return;
+
+        const messagesContainer = document.getElementById('chat-messages');
+
+        const userBubble = document.createElement('div');
+        userBubble.className = "flex justify-end my-2";
+        userBubble.innerHTML = `
+            <div class="bg-blue-600 text-white p-2.5 rounded-lg font-bold text-xs max-w-[80%]">
+                ${text}
+            </div>
+        `;
+        messagesContainer.appendChild(userBubble);
+        input.value = '';
+
+        setTimeout(() => {
+            addWhatsAppChatButton(`Mensagem enviada via site: "${text}"`);
+        }, 300);
+    }
+
+    // 3. Filtro da Galeria de Equipamentos
+    function filterGallery(category) {
+        const items = document.querySelectorAll('.gallery-item');
+        const tabs = document.querySelectorAll('.gallery-tab');
+
+        tabs.forEach(tab => {
+            tab.classList.remove('bg-brand-bluePrimary', 'text-white');
+            tab.classList.add('text-gray-300');
+        });
+
+        const activeBtn = document.getElementById(`filter-${category}`);
+        if (activeBtn) {
+            activeBtn.classList.add('bg-brand-bluePrimary', 'text-white');
+            activeBtn.classList.remove('text-gray-300');
         }
 
-        // --- 3. FILTRO DA GALERIA ---
-        function filterGallery(category) {
-            const items = document.querySelectorAll('.gallery-item');
-            const tabs = document.querySelectorAll('.gallery-tab');
-
-            tabs.forEach(tab => {
-                tab.classList.remove('bg-radial-gold', 'text-radial-navy');
-                tab.classList.add('text-gray-300');
-            });
-
-            const activeBtn = document.getElementById(`filter-${category}`);
-            if(activeBtn) {
-                activeBtn.classList.add('bg-radial-gold', 'text-radial-navy');
-                activeBtn.classList.remove('text-gray-300');
+        items.forEach(item => {
+            if (category === 'all' || item.classList.contains(category)) {
+                item.style.display = 'flex';
+            } else {
+                item.style.display = 'none';
             }
+        });
+    }
 
-            items.forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+    // 4. Envio do Formulário de Cotação
+    function sendQuoteToWhatsApp(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('quote-name').value;
+        const company = document.getElementById('quote-company').value;
+        const qty = document.getElementById('quote-qty').value;
+        const period = document.getElementById('quote-period').value;
+        const fone = document.getElementById('acc-fone').checked ? 'Sim' : 'Não';
+        const repetidora = document.getElementById('acc-repetidora').checked ? 'Sim' : 'Não';
+        const obs = document.getElementById('quote-obs').value;
+
+        const message = `*NOVA COTAÇÃO - RADIAL COMUNICAÇÃO*\n\n` +
+            `👤 *Nome:* ${name}\n` +
+            `🏢 *Empresa / Evento:* ${company}\n` +
+            `📻 *Qtd. Rádios HT:* ${qty}\n` +
+            `📅 *Período:* ${period}\n` +
+            `🎧 *Fones PTT Lapela:* ${fone}\n` +
+            `📡 *Estação Repetidora:* ${repetidora}\n` +
+            `📝 *Observações / Local:* ${obs || 'Nenhuma'}`;
+
+        window.open(`https://wa.me/${PHONE_WHATSAPP}?text=${encodeURIComponent(message)}`, '_blank');
+    }
+
+    // 5. Modal de Políticas LGPD / Cookies
+    function openModal(type) {
+        const modal = document.getElementById('policy-modal');
+        const title = document.getElementById('modal-title');
+        const content = document.getElementById('modal-content');
+
+        if (type === 'privacidade') {
+            title.textContent = 'Política de Privacidade & LGPD';
+            content.innerHTML = `
+                <p>A <strong>RADIAL Radiocomunicação</strong> assegura o cumprimento da Lei Geral de Proteção de Dados (LGPD - Lei nº 113.709/2018).</p>
+                <p>Os dados informados no formulário são utilizados estritamente para o envio de propostas comerciais e cotações solicitadas pelo usuário.</p>
+            `;
+        } else if (type === 'termos') {
+            title.textContent = 'Termos de Serviço';
+            content.innerHTML = `
+                <p>A locação de rádios comunicadores é formalizada mediante confirmação de disponibilidade e acordo com o cliente.</p>
+                <p>Oferecemos suporte técnico durante todo o período do contrato de locação.</p>
+            `;
+        } else if (type === 'cookies') {
+            title.textContent = 'Política de Cookies';
+            content.innerHTML = `
+                <p>Este site utiliza cookies básicos de navegação e serviços de anúncios parceiros (Google AdSense) para personalizar a experiência do usuário.</p>
+            `;
         }
 
-        // --- 4. CALCULADORA DINÂMICA DE ORÇAMENTO ---
-        function calculateEstimate() {
-            const eventType = document.getElementById('event-type').value;
-            const publicCount = parseInt(document.getElementById('public-range').value);
-            const hoursCount = parseInt(document.getElementById('hours-range').value);
-            const addLocutor = document.getElementById('add-locutor').checked;
-            const addVinhetas = document.getElementById('add-vinhetas').checked;
+        modal.classList.remove('hidden');
+    }
 
-            document.getElementById('public-val').textContent = `${publicCount.toLocaleString('pt-BR')} pessoas`;
-            document.getElementById('hours-val').textContent = `${hoursCount} horas`;
-
-            let basePrice = 2800;
-            if (eventType === 'gala') basePrice = 3200;
-            if (eventType === 'esportivo') basePrice = 3500;
-            if (eventType === 'formatura') basePrice = 2500;
-
-            let publicExtra = 0;
-            if (publicCount > 500) {
-                publicExtra = Math.floor((publicCount - 500) / 500) * 300;
-            }
-
-            let hoursExtra = 0;
-            if (hoursCount > 4) {
-                hoursExtra = (hoursCount - 4) * 200;
-            }
-
-            let extras = 0;
-            if (addLocutor) extras += 800;
-            if (addVinhetas) extras += 500;
-
-            const total = basePrice + publicExtra + hoursExtra + extras;
-
-            document.getElementById('total-price').textContent = total.toLocaleString('pt-BR', {
-                style: 'currency',
-                currency: 'BRL'
-            });
-        }
-
-        function sendCalcToWhatsApp() {
-            const eventTypeSelect = document.getElementById('event-type');
-            const eventTypeName = eventTypeSelect.options[eventTypeSelect.selectedIndex].text;
-            const publicVal = document.getElementById('public-val').textContent;
-            const hoursVal = document.getElementById('hours-val').textContent;
-            const totalPrice = document.getElementById('total-price').textContent;
-
-            const message = `Olá Radial! Fiz uma simulação de Rádio para Eventos no site:%0A%0A` +
-                `📌 *Modalidade:* ${eventTypeName}%0A` +
-                `👥 *Público Estimado:* ${publicVal}%0A` +
-                `⏱ *Duração:* ${hoursVal}%0A` +
-                `💰 *Valor Estimado:* ${totalPrice}%0A%0A` +
-                `Gostaria de verificar a disponibilidade de data e fechar a proposta.`;
-
-            window.open(`https://wa.me/${PHONE_WHATSAPP}?text=${message}`, '_blank');
-        }
-
-        // --- 5. FORMULÁRIO DE CONTATO DIRETO WHATSAPP ---
-        function handleDirectContact(e) {
-            e.preventDefault();
-            const name = document.getElementById('contact-name').value;
-            const email = document.getElementById('contact-email').value;
-            const msg = document.getElementById('contact-message').value;
-
-            const formattedMsg = `Olá Radial! Mensagem enviada pelo formulário do site:%0A%0A` +
-                `👤 *Nome:* ${name}%0A` +
-                `✉️ *E-mail:* ${email}%0A` +
-                `💬 *Mensagem:* ${msg}`;
-
-            window.open(`https://wa.me/${PHONE_WHATSAPP}?text=${formattedMsg}`, '_blank');
-        }
-
-        // --- 6. MODAL DE POLÍTICAS ADSENSE ---
-        function openModal(type) {
-            const modal = document.getElementById('policy-modal');
-            const title = document.getElementById('modal-title');
-            const content = document.getElementById('modal-content');
-
-            if (type === 'privacidade') {
-                title.textContent = 'Política de Privacidade';
-                content.innerHTML = `
-                    <p>A <strong>Radial - Rádio para Eventos</strong> se compromete com a privacidade dos visitantes.</p>
-                    <p><strong>Google AdSense & Cookies:</strong> Terceiros, incluindo o Google, usam cookies para veicular anúncios com base em visitas anteriores do usuário a este site. O uso de cookies de publicidade permite que o Google e seus parceiros veiculem anúncios para os usuários com base em suas visitas a este e/ou a outros sites na Internet.</p>
-                `;
-            } else if (type === 'termos') {
-                title.textContent = 'Termos de Serviço';
-                content.innerHTML = `
-                    <p>Os valores fornecidos pela calculadora de simulação servem como referência prévia e não constituem contrato final sem orçamento técnico presencial.</p>
-                `;
-            } else if (type === 'cookies') {
-                title.textContent = 'Política de Cookies';
-                content.innerHTML = `
-                    <p>Este site pode utilizar cookies de personalização e medição de tráfego do Google AdSense para exibir anúncios relevantes ao perfil do visitante.</p>
-                `;
-            }
-
-            modal.classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('policy-modal').classList.add('hidden');
-        }
-
-        // Inicializador
-        window.onload = function() {
-            calculateEstimate();
-        };
-    </script>
+    function closeModal() {
+        document.getElementById('policy-modal').classList.add('hidden');
+    }
+</script>
 </body>
 </html>
